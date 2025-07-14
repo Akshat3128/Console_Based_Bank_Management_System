@@ -1,0 +1,30 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build C++ Project",
+      "type": "shell",
+      "command": "g++",
+      "args": [
+        "main.cpp",
+        "Account.cpp",
+        "BankService.cpp",
+        "-o",
+        "BankApp.exe"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": ["$gcc"],
+      "detail": "Builds all C++ source files."
+    },
+    {
+      "label": "Run C++ Project",
+      "type": "shell",
+      "command": ".\\BankApp.exe",
+      "dependsOn": "Build C++ Project",
+      "group": "build"
+    }
+  ]
+}
